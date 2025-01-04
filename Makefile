@@ -1,9 +1,9 @@
-NAME			= out
+NAME			= tree
 CC				= cc
 CFLAGS			= -Wall -Wextra -Werror
 BUILD_PATH		?= ./build
 
-DEPENDENCIES		= libtrue libft libftprintf
+DEPENDENCIES		= libft libftprintf
 DEPENDENCIES_DIR	= ./dependencies
 DEPENDENCIES_FLAGS	= $(foreach lib,$(DEPENDENCIES),-L$(BUILD_PATH)/$(lib)) \
 						$(foreach lib,$(patsubst lib%,%, $(DEPENDENCIES)),-l$(lib))
@@ -30,10 +30,8 @@ clean:
 
 copy_include:
 	@for lib in $(DEPENDENCIES); do \
-		rm -rf include/$$lib; \
-		mkdir -p include/$$lib; \
-		cp $(DEPENDENCIES_DIR)/$$lib/include/* include/$$lib/; \
-		echo "#include \"$$lib/$$lib.h\"" >> include/header.h; \
+		cp $(DEPENDENCIES_DIR)/$$lib/include/* include/; \
+		echo "#include \"$$lib.h\"" >> include/tree.h; \
 	done
 
 fclean: clean
