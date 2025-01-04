@@ -6,12 +6,11 @@
 /*   By: ataher <ataher@student.42amman.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 04:25:03 by ataher            #+#    #+#             */
-/*   Updated: 2025/01/04 06:20:51 by ataher           ###   ########.fr       */
+/*   Updated: 2025/01/04 06:25:07 by ataher           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/tree.h"
-#include <dirent.h>
 
 void	args_stepper(int *argc, char ***argv)
 {
